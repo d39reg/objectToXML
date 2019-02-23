@@ -1,7 +1,7 @@
 <?php
   function toXML($object)
 	{
-	
+
 		function _aXML($memory, $object)
 		{
 			foreach ($object as $attr => $data)
@@ -9,7 +9,7 @@
 				if ($data) xmlwriter_write_attribute ($memory, $attr, $data);
 			}
 		}
-	
+
 		function _oXML($memory, $object, $backTag = 'tag')
 		{
 			if (gettype($object) == 'string')
@@ -39,7 +39,7 @@
 				xmlwriter_end_element ($memory);
 			}
 		}
-		
+
 		$memory = xmlwriter_open_memory();
 		xmlwriter_start_document($memory,'1.0','UTF-8'); // <?xml version="1.0" encoding="UTF-8" ? >
 		_oXML($memory, $object);
@@ -47,7 +47,7 @@
 		return xmlwriter_output_memory($memory, true);
 
 	}
-	
+
 	$data = [
 		'offers'=>[
 			'offer'=>[
@@ -77,7 +77,7 @@
 										]
 									]
 								]
-								
+
 								,[
 									'attr'=>[
 										'offer_id'=>123
@@ -98,13 +98,13 @@
 										]
 									]
 								]
-								
+
 							]
 						]
 					]
 				]
 				,'images'=>[
-				
+
 					'image'=>[
 						[
 							'attr'=>[
